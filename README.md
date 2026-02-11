@@ -1,94 +1,86 @@
-# Toxic ☣️
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0b6835ad-04cb-4c62-9b5d-67c08070eaef" alt="toxic_icon" width="220" />
 
-> **A High-Performance VirusTotal TUI Dashboard**
+  <h1>Toxic ☣️</h1>
 
-<img width="327" height="208" alt="toxic" src="https://github.com/user-attachments/assets/0b6835ad-04cb-4c62-9b5d-67c08070eaef" />
+  <p>
+    <strong>A High-Performance VirusTotal TUI Dashboard built with Python.</strong>
+  </p>
 
+  <p>
+    <img src="https://img.shields.io/badge/Made%20with-Textual-FF5F5F?style=flat-square" alt="Textual" />
+    <img src="https://img.shields.io/badge/Language-Python-3776AB?style=flat-square&logo=python" alt="Python" />
+    <img src="https://img.shields.io/badge/Status-Beta-orange?style=flat-square" alt="Status" />
+    <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License" />
+  </p>
 
-**Toxic** is a modern, visual Terminal User Interface (TUI) for VirusTotal, built with Python and [Textual](https://textual.textualize.io/). It provides a seamless, keyboard-centric way to scan files, URLs, and domains directly from your terminal with a polished "Toxic Red & Cool Grey" aesthetic.
+  <p>
+    <a href="#"><strong>Documentation</strong></a> · 
+    <a href="https://github.com/yourusername/toxic"><strong>Source Code</strong></a> · 
+    <a href="https://github.com/yourusername/toxic/issues"><strong>Report Bug</strong></a>
+  </p>
+</div>
 
----
+<br>
 
-## ⚠️ Development Status
+<p align="center">
+  <img width="700" alt="toxic_main_demo" src="https://github.com/user-attachments/assets/0b6835ad-04cb-4c62-9b5d-67c08070eaef" />
+</p>
 
-**Current Status: Active Development (Beta)**
+<br>
 
-This project is currently in active development. While the core scanning features and UI (v2.1) are stable, you may encounter bugs or incomplete features.
-- **UI Version:** 2.1 (Toxic Red)
-- **Core Logic:** Implemented
-- **Auth:** Functional (Keyring integration)
+## Why Toxic?
 
----
+Toxic is a modern, visual Terminal User Interface (TUI) for VirusTotal. It provides a seamless, keyboard-centric way to scan threats with a polished "Toxic Red & Cool Grey" aesthetic.
 
-## Key Features
+- **Visual Dashboard:** A beautiful, responsive interface featuring high-resolution image rendering (via `textual-image`) and a custom design system.
+- **VirusTotal Integration:** 
+    - **File Mode:** Scan local files by path or check existing hashes.
+    - **URL Mode:** Analyze suspicious URLs instantly.
+    - **Search Mode:** Investigate IP addresses, domains, and hashes.
+- **Secure Authentication:** Securely stores your API Key using the system's native keyring service—no plain-text keys in your history.
+- **Reactive UI:** Built on an asynchronous engine for real-time updates and smooth transitions between scanning modes.
+- **Local & Fast:** Designed for power users who need to investigate threats without leaving the command line.
 
-*   **Visual Dashboard:** A beautiful, responsive TUI with high-resolution image rendering (via `textual-image`) and a custom design system.
-*   **VirusTotal Integration:**
-    *   **File Mode:** Scan local files (by path) or check existing hashes.
-    *   **URL Mode:** Scan and analyze URLs.
-    *   **Search Mode:** Investigate IP addresses, domains, and file hashes.
-*   **Secure Authentication:**
-    *   Securely stores your VirusTotal API Key using the system's native keyring service.
-    *   Settings menu for easy key management.
-*   **Reactive UI:** Real-time updates and smooth transitions between scanning modes.
+## Installation
 
-## Installation & Usage
+Get started by cloning the repository and installing the required Python dependencies.
 
-### Prerequisites
-- Python 3.8+
-- A [VirusTotal API Key](https://www.virustotal.com/gui/user/apikey)
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/toxic.git
+cd toxic
 
-### Setup
+# Install dependencies
+pip install -r requirements.txt
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/yourusername/toxic.git
-    cd toxic
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Run the application:**
-    ```bash
-    ./run.sh
-    # OR
-    python src/main.py
-    ```
+# Run the application
+./run.sh
+# OR
+python src/main.py
+```
 
 ## Controls
 
-Toxic is designed for both keyboard and mouse interaction.
+Toxic is designed for both keyboard efficiency and mouse interaction.
 
-| Key / Action | Description |
-| :--- | :--- |
-| **`s`** | Open **Settings** (Enter API Key) |
-| **`q`** | **Quit** the application |
-| **`Enter`** | Submit scan / Confirm action |
-| **Click** | All buttons and tabs are clickable |
-
-### Workflow
-1.  Launch Toxic.
-2.  Press `s` to open Settings and paste your VirusTotal API Key.
-3.  Select a mode: **FILE**, **URL**, or **SEARCH**.
-4.  Enter your target (path, URL, or hash) and press `SCAN` (or Enter).
-5.  View detailed results in the markdown-rendered report view.
+| Context | Shortcut | Action |
+| :--- | :--- | :--- |
+| **Global** | `s` | Open **Settings** (API Key) |
+| | `q` | **Quit** the application |
+| **Navigation** | `Enter` | Submit scan / Confirm action |
+| | `Tab` | Switch between input fields |
+| **Interaction** | `Click` | All buttons and tabs are clickable |
 
 ## Architecture
 
-Toxic follows a modular architecture separating UI, Core Logic, and Authentication.
+Toxic follows a modular architecture separating the reactive frontend from the core API logic:
 
-*   **Frontend (`src/ui/`):**
-    *   Built with **Textual**, leveraging its CSS-like styling (`.tcss`) and widget system.
-    *   **`screens.py`**: Contains the main application logic, including `MainScreen`, `SettingsScreen`, and `ResultsScreen`.
-    *   **`style.tcss`**: Defines the "Toxic" design system (colors, layout, animations).
-*   **Core (`src/core/`):**
-    *   **`vt_client.py`**: Wrapper around `vt-py` to handle asynchronous API requests and data formatting.
-*   **Authentication (`src/auth/`):**
-    *   **`manager.py`**: Handles secure storage and retrieval of API keys using the `keyring` library.
+- **Frontend (`src/ui/`):** Leverages **Textual** and CSS-like styling (`.tcss`) for a reactive widget system.
+- **Core Logic (`src/core/`):** An asynchronous wrapper around `vt-py` for efficient data formatting.
+- **Authentication (`src/auth/`):** Handles secure storage via the `keyring` library to interface with system-level security.
 
 <p align="center">
 &copy; CodeFXR. All rights reserved.
 </p>
+```
