@@ -23,10 +23,6 @@
 
 <br>
 
-<p align="center">
-  <img width="700" alt="toxic_main_demo" src="https://github.com/user-attachments/assets/0b6835ad-04cb-4c62-9b5d-67c08070eaef" />
-</p>
-
 <br>
 
 ## Why Toxic?
