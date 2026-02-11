@@ -22,7 +22,6 @@
 </div>
 
 <br>
-
 <br>
 
 ## Why Toxic?
@@ -79,4 +78,3 @@ Toxic follows a modular architecture separating the reactive frontend from the c
 <p align="center">
 &copy; CodeFXR. All rights reserved.
 </p>
-```
