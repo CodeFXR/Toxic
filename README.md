@@ -2,7 +2,7 @@
 
 > **A High-Performance VirusTotal TUI Dashboard**
 
-<img width="627" height="708" alt="toxic" src="https://github.com/user-attachments/assets/0b6835ad-04cb-4c62-9b5d-67c08070eaef" />
+<img width="327" height="208" alt="toxic" src="https://github.com/user-attachments/assets/0b6835ad-04cb-4c62-9b5d-67c08070eaef" />
 
 
 **Toxic** is a modern, visual Terminal User Interface (TUI) for VirusTotal, built with Python and [Textual](https://textual.textualize.io/). It provides a seamless, keyboard-centric way to scan files, URLs, and domains directly from your terminal with a polished "Toxic Red & Cool Grey" aesthetic.
@@ -20,7 +20,7 @@ This project is currently in active development. While the core scanning feature
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 *   **Visual Dashboard:** A beautiful, responsive TUI with high-resolution image rendering (via `textual-image`) and a custom design system.
 *   **VirusTotal Integration:**
@@ -32,7 +32,7 @@ This project is currently in active development. While the core scanning feature
     *   Settings menu for easy key management.
 *   **Reactive UI:** Real-time updates and smooth transitions between scanning modes.
 
-## 🚀 Installation & Usage
+## Installation & Usage
 
 ### Prerequisites
 - Python 3.8+
@@ -58,7 +58,7 @@ This project is currently in active development. While the core scanning feature
     python src/main.py
     ```
 
-## 🎮 Controls
+## Controls
 
 Toxic is designed for both keyboard and mouse interaction.
 
@@ -76,7 +76,7 @@ Toxic is designed for both keyboard and mouse interaction.
 4.  Enter your target (path, URL, or hash) and press `SCAN` (or Enter).
 5.  View detailed results in the markdown-rendered report view.
 
-## 🏗️ Architecture
+## Architecture
 
 Toxic follows a modular architecture separating UI, Core Logic, and Authentication.
 
